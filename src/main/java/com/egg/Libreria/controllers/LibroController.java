@@ -5,8 +5,6 @@
  */
 package com.egg.Libreria.controllers;
 
-import com.egg.Libreria.Services.AutorService;
-import com.egg.Libreria.Services.EditorialService;
 import com.egg.Libreria.Services.LibroService;
 import com.egg.Libreria.entities.Libro;
 import java.util.Optional;
@@ -29,6 +27,10 @@ public class LibroController {
 
     @Autowired
     private LibroService libroService;
+    
+    @GetMapping("/libro")
+    public String inicio(){
+    return "index";}
 
     @GetMapping("/list")
     public String listLibro(Model model) {

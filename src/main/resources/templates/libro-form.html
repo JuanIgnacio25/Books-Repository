@@ -11,41 +11,57 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Crear Persona</h1>
-        <br>
-        <button><a th:href="@{/}">Regresar</a></button>
-        <br>
-        <form th:action="@{/libro/save}" method="POST" th:object="${libro}">
-            <div>Crear Persona</div>
-            <input hidden th:field="*{id}">
-            <label>ISBN</label>
-            <input type="number" th:field="*{isbn}">
-            <br>
-            <label>Titulo</label>
-            <input type="text" th:field="*{titulo}">
-            <br>
-            <label>Año</label>
-            <input type="number" th:field="*{anio}">
-            <br>
-            <label>Ejemplares</label>
-            <input type="number" th:field="*{ejemplares}">
-            <br>
-            <label>Ejemplares Prestados</label>
-            <input type="number" th:field="*{ejemplaresPrestados}">
-            <br>
-            <label>Ejemplares Restantes</label>
-            <input type="text" th:field="*{ejemplaresPrestados}">
-            <br>
-            <label>Estado</label>
-            <input type="checkbox" value="indeterminate" th:field="*{alta}">
-            <br>
-            <label>Autor</label>
-            <input type="text" th:field="*{autor.nombre}">
-            <br>
-            <label>Editorial</label>
-            <input type="text" th:field="*{editorial.nombre}">
-            <br>
-            <input type="submit">
-        </form>
+        <header>
+            <nav>
+                <h1>Repository</h1>
+                <h2>Crear Un Libro</h2>
+                <ul>
+                    <li><a th:href="@{/}">Inicio</a></li>
+                    <li><a th:href="@{/libro/list}">Lista de Libros</a></li>
+                    <li><a th:href="@{/libro/form}">Crear Un Libro</a></li>
+                </ul>
+            </nav>
+        </header>
+        <article>
+            <form th:action="@{/libro/save}" method="POST" th:object="${libro}">
+                <div>Crear Persona</div>
+                <input hidden th:field="*{id}">
+                <label>ISBN</label>
+                <input type="number" th:field="*{isbn}">
+                <br>
+                <label>Titulo</label>
+                <input type="text" th:field="*{titulo}">
+                <br>
+                <label>Año</label>
+                <input type="number" th:field="*{anio}">
+                <br>
+                <label>Ejemplares</label>
+                <input type="number" th:field="*{ejemplares}">
+                <br>
+                <label>Ejemplares Prestados</label>
+                <input type="number" th:field="*{ejemplaresPrestados}">
+                <br>
+                <label>Ejemplares Restantes</label>
+                <input type="text" th:field="*{ejemplaresPrestados}">
+                <br>
+                <label>Estado</label>
+                <input type="checkbox" value="indeterminate" th:field="*{alta}">
+                <br>
+                <label>Autor</label>
+                <input type="text" th:field="*{autor.nombre}">
+                <br>
+                <label>Editorial</label>
+                <input type="text" th:field="*{editorial.nombre}">
+                <br>
+                <input type="submit">
+            </form>
+
+        </article>
+        <footer>
+            <h4>Copyright -- Todos los derechos Reservados</h4>
+            <p>Seguinos en nuestras <b>redes</b></p>
+            <a href="https://twitter.com/LilOruga" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com/juani_colli/" target="_blank">Instagram</a>
+        </footer>
     </body>
 </html>

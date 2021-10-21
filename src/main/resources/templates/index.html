@@ -5,14 +5,46 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html lang="es-AR" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>First Repository</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <h1>Repositorio de Libros</h1>
-        <button><a th:href="@{/libro/list}">Ver lista de Libros</a></button>
-        <button><a th:href="@{/libro/form}">Crear un libro</a></button>
-    </body>
+
+<head>
+    <title>First Repository</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Repository</h1>
+            <h2>Inicio</h2>
+            <ul>
+                <li><a th:href="@{/}">Inicio</a></li>
+                <li><a th:href="@{/libro/list}">Lista de Libros</a></li>
+                <li><a th:href="@{/libro/form}">Crear Un Libro</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <article>
+        <section>
+            <img src="https://theke.info/wp-content/uploads/2020/05/imagen-destacada-45-800x445.png">
+        </section>
+        <section>
+            <h2>Utilidades</h2>
+            <p>En este repositorio podras guardar tus libros favoritos,
+                y buscar a cada uno de ellos por autor, editorial o por el mismo nombre del libro</p>
+        </section>
+    </article>
+    <aside>
+        <h2>Sobre nosotros</h2>
+        <p>Soy un programador junior especializado en java spring y sql</p>
+    </aside>
+    <footer>
+        <h4>Copyright -- Todos los derechos Reservados</h4>
+        <p>Seguinos en nuestras <b>redes</b></p>
+        <a href="https://twitter.com/LilOruga" target="_blank">Twitter</a>
+        <a href="https://www.instagram.com/juani_colli/" target="_blank">Instagram</a>
+    </footer>
+</body>
+
 </html>

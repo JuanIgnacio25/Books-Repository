@@ -5,17 +5,28 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html lang="es-AR" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>First Repository</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <h1>Lista de libros</h1>
-        <br>
-        <button><a th:href="@{/}">Regresar</a></button>
-        <br>
-        <table>
+
+<head>
+    <title>First Repository</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <h1>Repository</h1>
+            <h2>Lista De Libros</h2>
+            <ul>
+                <li><a th:href="@{/}">Inicio</a></li>
+                <li><a th:href="@{/libro/list}">Lista de Libros</a></li>
+                <li><a th:href="@{/libro/form}">Crear Un Libro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <article>
+        <table > 
             <thead>
                 <tr>
                     <th>ISBN</th>
@@ -36,12 +47,22 @@ and open the template in the editor.
                     <td th:text="${l.autor.nombre}"></td>
                     <td th:text="${l.editorial.nombre}"></td>
                     <td>
-                    <button><a th:href="@{/libro/delete}+'?id='+${l.id}">Eliminar</a></button>
-                    <button><a th:href="@{/libro/form}+'?id='+${l.id}">Editar</a></button>
+                        <button><a th:href="@{/libro/delete}+'?id='+${l.id}">Eliminar</a></button>
+                        <button><a th:href="@{/libro/form}+'?id='+${l.id}">Editar</a></button>
                     </td>
                 </tr>
             </tbody>
             <p th:if="${libros.isEmpty}">No Hay Libros para mostrar</p>
         </table>
-    </body>
+
+    </article>
+
+    <footer>
+        <h4>Copyright -- Todos los derechos Reservados</h4>
+        <p>Seguinos en nuestras <b>redes</b></p>
+        <a href="https://twitter.com/LilOruga" target="_blank">Twitter</a>
+        <a href="https://www.instagram.com/juani_colli/" target="_blank">Instagram</a>
+    </footer>
+</body>
+
 </html>
